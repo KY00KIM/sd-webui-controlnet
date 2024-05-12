@@ -862,7 +862,9 @@ class Script(scripts.Script, metaclass=(
             self.enabled_units = Script.get_enabled_units(p)
 
         batch_option_uint_separate = self.ui_batch_option_state[0] == BatchOption.SEPARATE.value
-        batch_option_style_align = self.ui_batch_option_state[1]
+        # @@ KY00KIM : Temporary style-align fix
+        # batch_option_style_align = self.ui_batch_option_state[1]
+        batch_option_style_align = True
 
         if len(self.enabled_units) == 0 and not batch_option_style_align:
            self.latest_network = None
